@@ -1,0 +1,52 @@
+<ng-container [ngSwitch]="!!href">
+  <!-- Clickable (either external link or routerLink) -->
+  <a *ngSwitchCase="true"
+     class="text-decoration-none d-block"
+     [href]="external ? href : null"
+     [routerLink]="!external ? href : null">
+    <ng-container *ngTemplateOutlet="cardTpl"></ng-container>
+  </a>
+
+  <!-- Not clickable -->
+  <ng-container *ngSwitchDefault>
+    <ng-container *ngTemplateOutlet="cardTpl"></ng-container>
+  </ng-container>
+</ng-container>
+
+<ng-template #cardTpl>
+  <div class="card shadow-sm border-0">
+    <div class="position-relative overflow-hidden" [ngClass]="[ratioClass, rounded]">
+      <!-- Image -->
+      <img
+        class="w-100 h-100 position-absolute top-0 start-0"
+        [ngClass]="objectFitClass"
+        [attr.loading]="loading"
+        [attr.srcset]="srcset"
+        [attr.sizes]="sizes"
+        [src]="src"
+        [alt]="alt"
+        (load)="onLoad()"
+        (error)="onError()"
+      />
+
+      <!-- Shimmer while loading -->
+      <div class="skeleton" *ngIf="!isLoaded && !isError"></div>
+
+      <!-- Error fallback -->
+      <div class="placeholder bg-light d-flex align-items-center justify-content-center p-3"
+           *ngIf="isError">
+        <span class="text-muted small">Image unavailable</span>
+      </div>
+
+      <!-- Optional badge -->
+      <span *ngIf="badge" class="badge text-bg-dark position-absolute top-0 end-0 m-2">
+      </span>
+    </div>
+
+    <div class="card-body">
+      <h5 class="card-title mb-1" *ngIf="title">{{ title }}</h5>
+      <div class="card-subtitle text-muted mb-2" *ngIf="subtitle">{{ subtitle }}</div>
+      <p class="card-text mb-0" *ngIf="caption">{{ caption }}</p>
+    </div>
+  </div>
+</ng-template>

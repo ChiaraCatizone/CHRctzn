@@ -1,0 +1,78 @@
+/* === Pink Glass Reflection Navbar === */
+.navbar.glass {
+  /* Glass background */
+  background: transparent;
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Optional extra glass shine line (fake reflection strip) */
+.navbar.glass::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  background:var(--glass-bg);
+  border-top-left-radius: inherit;
+  border-top-right-radius: inherit;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* Text & links */
+.navbar.glass .nav-link,
+.navbar.glass .navbar-brand {
+  color: #a24e86; /* bright magenta */
+  font-weight: 600;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.4);
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+    padding: 0.5em;
+}
+
+.navbar-brand:hover{
+    text-decoration: underline;
+}
+
+.navbar.glass .nav-link:hover,
+.navbar.glass .nav-link.active {
+  background: var(--pill-hover);
+  border: 1px solid var(--ring);
+  /* color: #ff00aa; lighter magenta highlight */
+  text-shadow:
+    0 0 10px rgba(255, 105, 180, 0.5),#f2d0de9c;
+  border-radius: 12px;
+  box-shadow: 1px var(--glass-shadow);
+}
+
+/* Dropdown glass background */
+.glass-dropdown {
+  background: rgba(255, 182, 193, 0.4);
+  backdrop-filter: blur(14px) saturate(160%);
+  -webkit-backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(255, 105, 180, 0.25);
+}
+
+.glass-dropdown .dropdown-item {
+  color: #a24e86;;
+}
+
+.glass-dropdown .dropdown-item:hover {
+  background: rgba(255, 105, 180, 0.2);
+  color: #ff00aa;
+}
+
+/* Responsive tweak */
+@media (max-width: 991.98px) {
+  .navbar.glass {
+    background: linear-gradient(
+      145deg,
+      rgba(255, 182, 193, 0.55),
+      rgba(255, 192, 203, 0.35)
+    );
+  }
+}
