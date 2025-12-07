@@ -1,21 +1,127 @@
 /* === Global pink glass palette === */
 :root {
   --glass-bg: transparent;
-  --glass-shadow: 0 9px 1px hsla(330, 79%, 95%, 0.68);
+  --glass-shadow: 0 9px 1px hsla(330, 79%, 95%, 0.40);
   --text-muted: hsla(330, 100%, 95%, 0.85);
   --text-strong: #fff;
   --pill-grad-start: hsl(330, 85%, 60%);
   --pill-grad-end: hsl(300, 80%, 55%);
   --pill-glow: rgba(255, 105, 180, 0.45);
-  --pill-hover:  
-  /* radial-gradient(circle at 20% 40%, rgba(243, 246, 249, 0.532), transparent 70%), */
-  linear-gradient(135deg,  #fefdfde4,rgba(255, 105, 180, 0.2));
-  --ring:  #ffffff89;
+  --pill-hover:
+    /* radial-gradient(circle at 20% 40%, rgba(243, 246, 249, 0.532), transparent 70%), */
+    linear-gradient(135deg, #fefdfde4, rgba(255, 105, 180, 0.2));
+  --ring: #ffffff89;
 }
 
-img, svg {
-    width: -webkit-fill-available;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  /* use min-height 100 vh instead of height to allow extended height with large content */
+  /* overflow-y: hidden; */
+  color: antiquewhite;
+  background-color: #161624e4;
+  overflow-y: hidden;
 }
-main{
-    padding: 5em 15em;
+
+img,
+svg {
+  width: -webkit-fill-available;
+}
+
+.main {
+  padding: 7em 2em 4em 2em;
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+.content {
+  height: 100vh;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+.section {
+  background-color: #282943e4;
+}
+
+.row {
+  padding: 0.5em;
+}
+
+.card {
+  height: 50vh;
+  overflow-y: scroll;
+  z-index: 100;
+  color: antiquewhite;
+  background: inherit;
+  border: 0px;
+}
+
+.card-secondary {
+  overflow-y: hidden;
+  height: fit-content;
+  min-height: -webkit-fill-available;
+  background-color: #e4cbf352;
+}
+
+.card-text,
+.card-body {
+  height: -webkit-fill-available;
+  padding: 0%;
+  z-index: 0;
+
+}
+
+
+.card-secondary .card-text,
+.card-secondary .card-title {
+  text-align: center;
+}
+
+.card-secondary .card-title {
+  padding: 1em;
+}
+
+.card .card-text {
+  height: 84%;
+  padding: 1em;
+}
+
+.card-body ul {
+  height: 95%;
+  overflow-y: scroll !important;
+  z-index: 0;
+}
+
+.card-body ul li {
+  z-index: 0;
+}
+
+path {
+  float: left;
+}
+
+.logo {
+  fill: none;
+  /* no fill, just outline */
+  stroke: black;
+  stroke-width: 3;
+  top: 0px;
+  /* big dash that covers the whole path */
+  stroke-dasharray: 4000;
+  /* just a big number */
+  stroke-dashoffset: 4000;
+  /* start fully hidden */
+
+  animation: draw-line 10s ease-out forwards;
+}
+
+@keyframes draw-line {
+  to {
+    stroke-dashoffset: 0;
+    /* move dash so the line appears */
+  }
 }
