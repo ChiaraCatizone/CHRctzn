@@ -1,1 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+/* === Global pink glass palette === */
+:root {
+  --glass-bg: transparent;
+  --glass-shadow: 0 9px 1px hsla(330, 79%, 95%, 0.68);
+  --text-muted: hsla(330, 100%, 95%, 0.85);
+  --text-strong: #fff;
+  --pill-grad-start: hsl(330, 85%, 60%);
+  --pill-grad-end: hsl(300, 80%, 55%);
+  --pill-glow: rgba(255, 105, 180, 0.45);
+  --pill-hover:  
+  /* radial-gradient(circle at 20% 40%, rgba(243, 246, 249, 0.532), transparent 70%), */
+  linear-gradient(135deg,  #fefdfde4,rgba(255, 105, 180, 0.2));
+  --ring:  #ffffff89;
+}
+
+img, svg {
+    width: -webkit-fill-available;
+}
+main{
+    padding: 5em 15em;
+}
