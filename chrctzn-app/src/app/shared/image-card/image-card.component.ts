@@ -27,7 +27,7 @@ export class ImageCard {@Input() src!: string;
   @Input() ratio: Ratio = '16x9';   // 1x1 | 4x3 | 16x9 | 21x9
   @Input() fit: Fit = 'cover';      // cover | contain | fill
   @Input() rounded: '' | 'rounded' | 'rounded-3' | 'rounded-4' = 'rounded-3';
-  @Input() loading: 'lazy' | 'eager' = 'lazy';
+  @Input() loading: 'lazy' | 'eager' = 'eager';
 
   /** Responsive images (optional) */
   @Input() srcset?: string;

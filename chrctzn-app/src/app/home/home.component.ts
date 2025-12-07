@@ -3,9 +3,9 @@ import { ImageCard } from '../image-card/image-card';
 
 @Component({
   standalone: true,
-  imports: [ImageCard],
+  // imports: [ImageCard],
   templateUrl: './home.html',
-  styleUrl: './home.css'
+  styleUrls: ['./home.css']
 })
 export class HomeComponent {
 
