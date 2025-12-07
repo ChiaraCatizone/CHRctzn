@@ -1,9 +1,19 @@
-.navabr{
+.navbar{
     --bs-navbar-color: antiquewhite;
+    --bs-nav-link-hover-color:  antiquewhite;
 }
 
-.nava-link::hoover{
-    background: antiquewhite; 
+
+.nav-link
+{
+    font-size:1.25em;
+    border-radius: 20%;
+}
+
+.nav-link.active, .nav-link ::hoover
+{
+    color: antiquewhite!important;
+    background-color: rgba(250, 235, 215, 0.109);
 }
 
 .glitch-text {
