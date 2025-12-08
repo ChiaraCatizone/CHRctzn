@@ -38,6 +38,7 @@ svg {
   max-height: 85vh;
   bottom: 0vh;
   position: absolute;
+  overflow-y: hidden;
 }
 
 .content {
@@ -90,7 +91,6 @@ svg {
 }
 
 .card .card-text {
-  height: 84%;
   padding: 1em;
 }
 

@@ -1,19 +1,22 @@
 /* Desktop Breakpoint */
 @media only screen and (max-width: 1024px) {
-body {
-    font-size: 12px;
-}
+    body {
+        font-size: 12px;
+    }
 }
 
 /* Tablet Breakpoint */
-@media  only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     body {
-    font-size: 10px;
-}
+        font-size: 10px;
+    }
 }
 
 /* Mobile Breakpoint */
-@media  only screen and (min-width: 440px) {
+@media only screen and (max-width: 440px) {
+    .card-secondary, .card-body, .card-text {
+    height: fit-content;
+    min-height: fit-content;
+    max-height: fit-content;
 }
-
-
+}

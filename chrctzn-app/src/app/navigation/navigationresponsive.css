@@ -1,21 +1,43 @@
 /* Desktop Breakpoint */
 @media only screen and (max-width: 1024px) {
-body {
-    font-size: 12px;
-}
+    body {
+        font-size: 12px;
+    }
 }
 
 /* Tablet Breakpoint */
-@media  only screen and (max-width: 768px) {
+@media only screen and (max-width: 768px) {
     .glitch-text {
-    font-size: 3rem;
+        font-size: 3rem;
 
-}
+    }
+
+    .navbar {
+        position: relative;
+    }
 }
 
 /* Mobile Breakpoint */
-@media  only screen and (max-width: 440px) {
-    .navbar-collapse{
-    background-color: rgb(250, 235, 215)!important;
-}
+@media only screen and (max-width: 440px) {
+    .navbar-collapse {
+        background-color: rgb(250, 235, 215) !important;
+        padding: 1em;
+    }
+
+    .nav-item {
+        margin: 0;
+    }
+
+    .nav-link.pill.active {
+        padding: 1em;
+    }
+
+    .nav-link.pill,
+    .nav-link.pill.active {
+        color: black;
+    }
+
+    .nav-link.pill.active {
+        background-color: #9583c072;
+    }
 }

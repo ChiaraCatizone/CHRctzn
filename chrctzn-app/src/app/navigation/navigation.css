@@ -13,8 +13,8 @@
 
 .nav-link.active, .nav-link:hover, .navbar-nav .nav-link.show, button.navbar-toggler
 {
-    color: antiquewhite!important;
-    background-color: rgba(250, 235, 215, 0.109)!important;
+    color: antiquewhite;
+    background-color: rgba(250, 235, 215, 0.109);
     border-radius: 10px;
 }
 
