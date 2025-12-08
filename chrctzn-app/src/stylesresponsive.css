@@ -14,5 +14,7 @@
 
 /* Mobile Breakpoint */
 @media only screen and (max-width: 440px) {
-    
+    .card-secondary {
+    min-height: fit-content;
+}
 }
