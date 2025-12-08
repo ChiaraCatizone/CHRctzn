@@ -1,10 +1,5 @@
-.melting-text-container {
-    position: relative;
-    overflow: hidden;
-}
-
 .melting-text {
-    font-size: 5em;
+    font-size: 4em;
     font-weight: bold;
     text-transform: uppercase;
     color: #fff;
@@ -37,6 +32,12 @@
     opacity: 0.3;
 }
 
+.melting-text-container {
+    position: relative;
+    overflow: hidden;
+}
+
+
 /* Keyframes for melting effect */
 @keyframes melt {
     0%, 100% {
@@ -57,6 +58,4 @@
         opacity: 0.5;
     }
 }
-
-
 

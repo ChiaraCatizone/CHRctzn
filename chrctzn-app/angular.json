@@ -26,7 +26,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/stylesAtMedia.css"
+              "src/stylesresponsive.css"
             ],
             "server": "src/main.server.ts",
             "outputMode": "server",
@@ -89,7 +89,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/stylesAtMedia.css"
+              "src/stylesresponsive.css"
             ]
           }
         }

@@ -23,6 +23,7 @@ body {
   color: antiquewhite;
   background-color: #161624e4;
   overflow-y: hidden;
+  font-size: 14px;
 }
 
 img,
@@ -31,17 +32,20 @@ svg {
 }
 
 .main {
-  padding: 7em 2em 4em 2em;
-  height: 100vh;
-  min-height: 100vh;
-  max-height: 100vh;
+  padding: 0em 2em 4em 2em;
+  height: 85vh;
+  min-height: 85vh;
+  max-height: 85vh;
+  bottom: 0vh;
+  position: absolute;
 }
 
 .content {
-  height: 100vh;
-  min-height: 100vh;
-  max-height: 100vh;
-}
+  padding: 0;
+    height: 85vh;
+    min-height: 85vh;
+    max-height: 85vh;
+  }
 
 .section {
   background-color: #282943e4;
