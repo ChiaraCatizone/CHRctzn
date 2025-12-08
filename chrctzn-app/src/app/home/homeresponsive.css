@@ -7,7 +7,7 @@
 
 /* Tablet Breakpoint */
 @media only screen and (max-width: 768px) {
-    .card-secondary{
+    .card-secondary {
         margin-top: 1em;
     }
 }
@@ -19,5 +19,11 @@
 
     }
 
-    .row{padding: 0;}
+    .row {
+        padding: 0;
+        /* height: -webkit-fill-available; */
+    }
+    .row > .card {
+        height: 60vh;
+    }
 }
