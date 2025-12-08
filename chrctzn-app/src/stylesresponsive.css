@@ -14,7 +14,5 @@
 
 /* Mobile Breakpoint */
 @media only screen and (max-width: 440px) {
-    .row .card { 
-        height: 60vh;
-    }
+    
 }

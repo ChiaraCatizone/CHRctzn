@@ -18,4 +18,11 @@ body {
     .navbar-collapse{
     background-color: rgb(250, 235, 215)!important;
 }
+    .nav-link.pill, .nav-link.pill.active{
+    color: black;
+}
+
+    .nav-link.pill.active{
+    background-color: #9583c072;
+}
 }
