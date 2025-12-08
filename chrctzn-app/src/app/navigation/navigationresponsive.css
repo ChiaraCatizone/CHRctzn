@@ -1,0 +1,21 @@
+/* Desktop Breakpoint */
+@media only screen and (max-width: 1024px) {
+body {
+    font-size: 12px;
+}
+}
+
+/* Tablet Breakpoint */
+@media  only screen and (max-width: 768px) {
+    .glitch-text {
+    font-size: 3rem;
+
+}
+}
+
+/* Mobile Breakpoint */
+@media  only screen and (max-width: 425px) {
+    .navbar-collapse{
+    background-color: rgb(250, 235, 215)!important;
+}
+}

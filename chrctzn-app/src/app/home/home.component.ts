@@ -5,7 +5,7 @@ import { ImageCard } from '../image-card/image-card';
   standalone: true,
   // imports: [ImageCard],
   templateUrl: './home.html',
-  styleUrls: ['./home.css']
+  styleUrls: ['./home.css', './homeresponsive.css']
 })
 export class HomeComponent {
 
