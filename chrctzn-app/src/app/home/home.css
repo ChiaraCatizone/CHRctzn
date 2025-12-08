@@ -10,7 +10,7 @@
     text-transform: uppercase;
     color: #fff;
     position: relative;
-    animation: melt 3s infinite ease-in-out;
+    animation: melt 3s ease-in-out;
     background: linear-gradient(90deg, #ff6f61, #ffbd44, #ff6f61);
     -webkit-background-clip: text;
     color: transparent;
@@ -30,7 +30,7 @@
     z-index: -1;
     transform: scaleY(1);
     opacity: 0.5;
-    animation: drip 3s infinite ease-in-out;
+    animation: drip 3s ease-in-out;
 }
 
 .melting-text::after {
