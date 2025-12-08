@@ -30,25 +30,24 @@
     width: -webkit-fill-available;
     background-color: rgba(250, 235, 215, 0.671)!important;
 }
-
 .glitch-text {
     font-size: 5rem;
     font-weight: bold;
     position: relative;
     color: #fff;
-    animation: glitch 2s infinite;
+    animation: glitch 3s ;
 }
 
 .glitch-text::before,
 .glitch-text::after {
-    content: 'Chiara s';
+    content: 'Chiara\'s';
     position: absolute;
     top: 0;
     left: 0;
-    color: #ff6f61;
+    color:  #ff6f61;
     background: transparent;
     clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
-    animation: glitch 2s infinite;
+    animation: glitch 3s;
 }
 
 .glitch-text::after {
@@ -73,3 +72,6 @@
         transform: translate(1px, -1px);
     }
 }
+
+
+
