@@ -1,0 +1,21 @@
+/* Desktop Breakpoint */
+@media only screen and (max-width: 1024px) {
+  .melting-text {
+    font-size: 3em !important;
+  }
+}
+
+/* Tablet Breakpoint */
+@media only screen and (max-width: 768px) {
+  .intro {
+    margin-bottom: 1.5em;
+  }
+}
+
+/* Mobile Breakpoint */
+@media only screen and (max-width: 440px) {
+  .row {
+    padding: 0;
+    /* height: -webkit-fill-available; */
+  }
+}

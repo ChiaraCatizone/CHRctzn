@@ -1,0 +1,113 @@
+.melting-text-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.melting-text {
+  font-size: 4rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  position: relative;
+  color: var(--heading);
+}
+
+/* === Intro === */
+.intro {
+  padding-top: 2em;
+  margin-bottom: 2.5em;
+}
+
+.subtitle {
+  font-weight: 300;
+  letter-spacing: -0.02em;
+}
+
+.lead-text {
+  color: var(--text-soft);
+  font-size: 1.15em;
+}
+
+.section-title {
+  font-size: 1.5em;
+  font-weight: 400;
+  margin-bottom: 1em;
+}
+
+/* === Griglia delle card ===
+   auto-fill + minmax: il browser mette tante colonne quante ne entrano,
+   ognuna larga almeno 240px. Niente media query necessarie. */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.feature-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+}
+
+.feature-card:hover,
+.feature-card:focus-visible {
+  box-shadow: var(--card-shadow);
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.feature-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.feature-icon {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.85rem;
+  background: var(--surface-strong);
+  font-size: 1.35rem;
+}
+
+.feature-title {
+  margin: 0.5rem 0 0;
+  font-size: 1.25em;
+  font-weight: 400;
+}
+
+.feature-text {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.feature-link {
+  margin-top: 0.5rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.feature-badge {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-soft);
+  font-size: 0.8em;
+}
+
+/* Le card "in arrivo" sono un po' più tenui */
+.feature-card.is-soon {
+  opacity: 0.85;
+}
