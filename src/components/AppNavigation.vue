@@ -1,3 +1,9 @@
+<script setup>
+import { useTheme } from '@/composables/useTheme'
+
+const { theme, toggleTheme } = useTheme()
+</script>
+
 <template>
   <div class="head">
     <nav class="navbar glass z-1 top-0 navbar-expand-lg">
@@ -7,6 +13,18 @@
             <h1 class="glitch-text">Chiara's</h1>
           </div>
         </RouterLink>
+        <!-- Tasto del tema: @click chiama la funzione, :aria-label cambia testo in base al tema -->
+        <button
+          class="theme-toggle"
+          type="button"
+          :aria-label="
+            theme === 'dark' ? 'Passa alla modalità chiara' : 'Passa alla modalità scura'
+          "
+          :title="theme === 'dark' ? 'Modalità chiara' : 'Modalità scura'"
+          @click="toggleTheme"
+        >
+          <span aria-hidden="true">{{ theme === 'dark' ? '☀️' : '🌙' }}</span>
+        </button>
         <button
           class="navbar-toggler"
           type="button"

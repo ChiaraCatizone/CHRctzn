@@ -13,15 +13,4 @@
     rgba(0, 0, 0, 0.12) 37%,
     rgba(0, 0, 0, 0.06) 63%
   );
-  background-size: 400% 100%;
-  animation: shimmer 1.2s infinite;
-}
-
-@keyframes shimmer {
-  0% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: -100% 0;
-  }
 }

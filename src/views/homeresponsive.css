@@ -7,22 +7,15 @@
 
 /* Tablet Breakpoint */
 @media only screen and (max-width: 768px) {
-  .card-secondary {
-    margin-top: 1em;
+  .intro {
+    margin-bottom: 1.5em;
   }
 }
 
 /* Mobile Breakpoint */
 @media only screen and (max-width: 440px) {
-  .logo {
-    display: none;
-  }
-
   .row {
     padding: 0;
     /* height: -webkit-fill-available; */
-  }
-  .row > .card {
-    height: 60vh;
   }
 }

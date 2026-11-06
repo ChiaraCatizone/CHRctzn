@@ -1,8 +1,8 @@
 .navbar {
-  --bs-navbar-color: antiquewhite;
-  --bs-nav-link-hover-color: antiquewhite;
+  --bs-navbar-color: var(--text);
+  --bs-nav-link-hover-color: var(--text);
   height: fit-content;
-  position: absolute;
+  position: relative;
 }
 
 .nav-link {
@@ -13,13 +13,13 @@
 .nav-link:hover,
 .navbar-nav .nav-link.show,
 button.navbar-toggler {
-  color: antiquewhite;
-  background-color: rgba(250, 235, 215, 0.109);
+  color: var(--text);
+  background-color: var(--surface);
   border-radius: 10px;
 }
 
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='antiquewhite' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23faebd7' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
 
 .nav-item {
@@ -34,42 +34,44 @@ button.navbar-toggler {
   font-size: 5rem;
   font-weight: bold;
   position: relative;
-  color: #fff;
-  animation: glitch 3s infinite;
+  color: var(--heading);
 }
 
-.glitch-text::before,
-.glitch-text::after {
-  content: "Chiara's";
-  position: absolute;
-  top: 0;
-  left: 0;
-  color: #595366;
-  background: transparent;
-  clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
-  animation: glitch 3s infinite;
+/* Il tasto del tema */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-left: auto;
+  margin-right: 0.75rem;
+  border: 1px solid var(--surface-strong);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 1.25rem;
+  cursor: pointer;
 }
 
-.glitch-text::after {
-  color: #595366;
-  clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%);
+.theme-toggle:hover {
+  background: var(--surface-strong);
 }
 
-@keyframes glitch {
-  0%,
-  100% {
-    transform: translate(0);
-  }
-  20% {
-    transform: translate(-2px, 2px);
-  }
-  40% {
-    transform: translate(2px, -2px);
-  }
-  60% {
-    transform: translate(-1px, 1px);
-  }
-  80% {
-    transform: translate(1px, -1px);
+.theme-toggle:focus-visible {
+  outline: 2px solid #9583c0;
+  outline-offset: 2px;
+}
+
+:root[data-theme='light'] .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Su schermi grandi il tasto del tema va in fondo a destra, dopo i link */
+@media (min-width: 992px) {
+  .theme-toggle {
+    order: 3;
+    margin-left: 0.75rem;
+    margin-right: 0;
   }
 }

@@ -5,6 +5,18 @@
     <link rel="icon" href="/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chiara's SPACE</title>
+    <script>
+      // Imposta il tema prima che la pagina si disegni, così non c'è il "lampo" di colore sbagliato
+      // (stessa logica di src/composables/useTheme.js: giorno 7:00–19:00, notte il resto)
+      var h = new Date().getHours()
+      var t = h >= 7 && h < 19 ? 'light' : 'dark'
+      try {
+        localStorage.removeItem('theme') // chiave della versione precedente, non più usata
+        var o = JSON.parse(localStorage.getItem('theme-override'))
+        if (o && Date.now() < o.until) t = o.theme
+      } catch (e) {}
+      document.documentElement.dataset.theme = t
+    </script>
   </head>
   <body>
     <div id="app"></div>

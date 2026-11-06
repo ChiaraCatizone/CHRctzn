@@ -1,66 +1,74 @@
 <script setup>
-import LogoLine from '@/components/LogoLine.vue'
+import { RouterLink } from 'vue-router'
 
 // Le card della home: aggiungi, togli o modifica gli elementi di questo array.
+// - icon: un emoji (o lascialo vuoto)
+// - link: se c'è, tutta la card diventa cliccabile
+// - soon: true mostra l'etichetta "In arrivo"
 const sections = [
   {
-    title: 'My Curriculum Vitae',
-    text: 'Questo è il posto per il link al CV:',
+    icon: '📄',
+    title: 'Curriculum Vitae',
+    text: 'Il mio percorso, le esperienze e le competenze.',
     link: { to: '/about', label: 'Vai al CV' },
   },
-  // Segnaposto: sostituiscili con i contenuti veri
-  ...Array.from({ length: 11 }, () => ({ title: 'My Curriculum Vitae' })),
+  {
+    icon: '🛠️',
+    title: 'Progetti',
+    text: 'Le cose che ho costruito e a cui sto lavorando.',
+    soon: true,
+  },
+  {
+    icon: '🎨',
+    title: 'Esperimenti',
+    text: 'Prove di design, animazioni e componenti.',
+    soon: true,
+  },
+  { icon: '✍️', title: 'Note', text: 'Appunti su quello che sto imparando.', soon: true },
+  { icon: '📷', title: 'Galleria', text: 'Immagini e lavori visivi.', soon: true },
+  { icon: '✉️', title: 'Contatti', text: 'Dove trovarmi e come scrivermi.', soon: true },
 ]
 </script>
 
 <template>
   <main class="main">
-    <div class="content">
-      <div class="row">
-        <div class="col-md-4 col-lg-4 col-sm-12">
-          <LogoLine stroke="#f2f1da" />
-        </div>
-        <div class="col-md-8 col-lg-8 col-sm-12">
-          <div class="row">
-            <div class="melting-text-container">
-              <h1 class="melting-text">Congrats Stranger,</h1>
-            </div>
-            <h1>you just landed on my Web Page!</h1>
-            <p>Construction is happening. 🎉</p>
-            <h2>Here you will find:</h2>
-          </div>
-          <div class="row">
-            <div class="card">
-              <div class="card-body">
-                <div class="card-text">
-                  <div class="row">
-                    <div
-                      v-for="(section, i) in sections"
-                      :key="i"
-                      class="col-md-4 col-lg-4 col-sm-12"
-                    >
-                      <div class="card card-secondary">
-                        <div class="card-body">
-                          <div class="card-title">
-                            <h3>{{ section.title }}</h3>
-                          </div>
-                          <div class="card-text">
-                            <p v-if="section.text">{{ section.text }}</p>
-                            <RouterLink v-if="section.link" :to="section.link.to">
-                              {{ section.link.label }}
-                            </RouterLink>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    <section class="intro">
+      <div class="melting-text-container">
+        <h1 class="melting-text">Congrats Stranger,</h1>
       </div>
-    </div>
+      <h1 class="subtitle">you just landed on my Web Page!</h1>
+      <p class="lead-text">Construction is happening. 🎉</p>
+    </section>
+
+    <section>
+      <h2 class="section-title">Here you will find</h2>
+
+      <div class="cards-grid">
+        <!--
+          <component :is> sceglie il tag: un RouterLink se la card ha un link,
+          altrimenti un semplice <article>.
+        -->
+        <component
+          :is="section.link ? RouterLink : 'article'"
+          v-for="section in sections"
+          :key="section.title"
+          :to="section.link?.to"
+          class="feature-card"
+          :class="{ 'is-link': section.link, 'is-soon': section.soon }"
+        >
+          <span v-if="section.icon" class="feature-icon" aria-hidden="true">{{
+            section.icon
+          }}</span>
+          <h3 class="feature-title">{{ section.title }}</h3>
+          <p v-if="section.text" class="feature-text">{{ section.text }}</p>
+
+          <span v-if="section.link" class="feature-link">
+            {{ section.link.label }} <span aria-hidden="true">→</span>
+          </span>
+          <span v-else-if="section.soon" class="feature-badge">In arrivo</span>
+        </component>
+      </div>
+    </section>
   </main>
 </template>
 

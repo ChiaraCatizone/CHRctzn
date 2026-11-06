@@ -14,11 +14,7 @@
 
 /* Mobile Breakpoint */
 @media only screen and (max-width: 440px) {
-  .card-secondary,
-  .card-body,
-  .card-text {
-    height: fit-content;
-    min-height: fit-content;
-    max-height: fit-content;
+  .main {
+    padding: 0.5em 1em 3em;
   }
 }

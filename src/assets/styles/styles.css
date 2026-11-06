@@ -1,3 +1,60 @@
+/* === Tema: colori per modalità chiara e scura ===
+   Tutti i colori che cambiano col tema stanno qui come variabili CSS.
+   Il tema attivo è scritto su <html data-theme="light|dark"> (vedi src/composables/useTheme.js). */
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  /* Pantone 19-4405 Forest River */
+  --bg: #3b4142;
+  --bg-glow-1: rgba(149, 131, 192, 0.08);
+  --bg-glow-2: rgba(255, 189, 68, 0.05);
+  /* Pantone 11-4201 Cloud Dancer */
+  --text: #f0eee9;
+  --heading: #f0eee9;
+  --text-soft: rgba(240, 238, 233, 0.72);
+  --surface: rgba(240, 238, 233, 0.08);
+  --surface-strong: rgba(228, 203, 243, 0.32);
+  --accent: #b9a7e6;
+  --card-bg: rgba(255, 255, 255, 0.04);
+  --card-border: rgba(240, 238, 233, 0.14);
+  --card-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  /* Pantone 11-4201 Cloud Dancer */
+  --bg: #f0eee9;
+  /* sfumature leggere, così il colore principale resta il Cloud Dancer */
+  --bg-glow-1: rgba(149, 131, 192, 0.1);
+  --bg-glow-2: rgba(255, 189, 68, 0.07);
+  --text: #23202c;
+  /* Pantone 19-4405 Forest River */
+  --heading: #3b4142;
+  --text-soft: rgba(35, 32, 44, 0.7);
+  --surface: rgba(35, 32, 44, 0.06);
+  --surface-strong: rgba(149, 131, 192, 0.2);
+  --accent: #6f5aa8;
+  --card-bg: rgba(255, 255, 255, 0.75);
+  --card-border: rgba(35, 32, 44, 0.08);
+  --card-shadow: 0 12px 30px rgba(111, 90, 168, 0.15);
+}
+
+/* === Font === */
+:root {
+  --font-heading: 'Schibsted Grotesk Variable', 'Helvetica Neue', Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  letter-spacing: -0.02em;
+  color: var(--heading);
+}
+
 /* === Global pink glass palette === */
 :root {
   --glass-bg: transparent;
@@ -20,12 +77,13 @@ html,
 body {
   margin: 0;
   padding: 0;
-  height: 100vh;
-  /* use min-height 100 vh instead of height to allow extended height with large content */
-  /* overflow-y: hidden; */
-  color: antiquewhite;
-  background-color: #161624e4;
-  overflow-y: hidden;
+  min-height: 100vh;
+  color: var(--text);
+  /* due "luci" sfumate sopra il colore di base */
+  background:
+    radial-gradient(circle at 15% 20%, var(--bg-glow-1), transparent 45%),
+    radial-gradient(circle at 85% 85%, var(--bg-glow-2), transparent 45%), var(--bg);
+  background-attachment: fixed;
   font-size: 14px;
 }
 
@@ -35,98 +93,26 @@ svg {
 }
 
 .main {
-  padding: 0em 2em 4em 2em;
-  height: 85vh;
-  min-height: 85vh;
-  max-height: 85vh;
-  bottom: 0vh;
-  position: absolute;
-  overflow-y: hidden;
-}
-
-.content {
-  padding: 0;
-  height: 85vh;
-  min-height: 85vh;
-  max-height: 85vh;
-}
-
-.section {
-  background-color: #282943e4;
+  /* la pagina ora scorre normalmente: niente altezze fisse */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1em 2em 4em;
 }
 
 .row {
   padding: 0.5em;
 }
 
-.card {
-  height: 50vh;
-  overflow-y: scroll;
-  z-index: 100;
-  color: antiquewhite;
-  background: inherit;
-  border: 0px;
+/* === Niente animazioni ===
+   Bootstrap ha alcune animazioni sue (apertura del menu mobile, scorrimento morbido):
+   le spegniamo qui. */
+:root {
+  scroll-behavior: auto;
 }
 
-.card-secondary {
-  overflow-y: hidden;
-  height: fit-content;
-  min-height: -webkit-fill-available;
-  background-color: #e4cbf352;
-}
-
-.card-text,
-.card-body {
-  height: -webkit-fill-available;
-  padding: 0%;
-  z-index: 0;
-}
-
-.card-secondary .card-text,
-.card-secondary .card-title {
-  text-align: center;
-}
-
-.card-secondary .card-title {
-  padding: 1em;
-}
-
-.card .card-text {
-  padding: 1em;
-}
-
-.card-body ul {
-  height: 95%;
-  overflow-y: scroll !important;
-  z-index: 0;
-}
-
-.card-body ul li {
-  z-index: 0;
-}
-
-path {
-  float: left;
-}
-
-.logo {
-  fill: none;
-  /* no fill, just outline */
-  stroke: black;
-  stroke-width: 3;
-  top: 0px;
-  /* big dash that covers the whole path */
-  stroke-dasharray: 4000;
-  /* just a big number */
-  stroke-dashoffset: 4000;
-  /* start fully hidden */
-
-  animation: draw-line 10s ease-out forwards;
-}
-
-@keyframes draw-line {
-  to {
-    stroke-dashoffset: 0;
-    /* move dash so the line appears */
-  }
+.collapsing,
+.nav-link,
+.navbar-toggler,
+.dropdown-item {
+  transition: none;
 }

@@ -7,6 +7,9 @@ import router from './router'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
+// Font dei titoli (alternativa gratuita a Founders Grotesk), servito dal sito stesso
+import '@fontsource-variable/schibsted-grotesk'
+
 // Stili globali del sito
 import './assets/styles/styles.css'
 import './assets/styles/stylesresponsive.css'

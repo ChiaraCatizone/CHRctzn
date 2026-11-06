@@ -7,55 +7,107 @@
   font-size: 4rem;
   font-weight: bold;
   text-transform: uppercase;
-  color: #fff;
   position: relative;
-  animation: melt 3s ease-in-out;
-  background: linear-gradient(90deg, #ff6f61, #ffbd44, #ff6f61);
-  -webkit-background-clip: text;
-  color: transparent;
+  color: var(--heading);
 }
 
-.melting-text::before,
-.melting-text::after {
-  content: 'Congrats Stranger,';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, #ff6f61, #ffbd44, #ff6f61);
-  -webkit-background-clip: text;
-  color: transparent;
-  z-index: -1;
-  transform: scaleY(1);
-  opacity: 0.5;
-  animation: drip 3s ease-in-out;
+/* === Intro === */
+.intro {
+  padding-top: 2em;
+  margin-bottom: 2.5em;
 }
 
-.melting-text::after {
-  filter: blur(10px);
-  opacity: 0.3;
+.subtitle {
+  font-weight: 600;
+  letter-spacing: -0.02em;
 }
 
-/* Keyframes for melting effect */
-@keyframes melt {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(8px);
-  }
+.lead-text {
+  color: var(--text-soft);
+  font-size: 1.15em;
 }
 
-@keyframes drip {
-  0%,
-  100% {
-    transform: scaleY(1);
-    opacity: 0.5;
-  }
-  50% {
-    transform: scaleY(1.5);
-    opacity: 0.7;
-  }
+.section-title {
+  font-size: 1.5em;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+/* === Griglia delle card ===
+   auto-fill + minmax: il browser mette tante colonne quante ne entrano,
+   ognuna larga almeno 240px. Niente media query necessarie. */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.feature-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  border-radius: 1.25rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  text-decoration: none;
+  backdrop-filter: blur(8px);
+}
+
+.feature-card:hover,
+.feature-card:focus-visible {
+  box-shadow: var(--card-shadow);
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.feature-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.feature-icon {
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 0.85rem;
+  background: var(--surface-strong);
+  font-size: 1.35rem;
+}
+
+.feature-title {
+  margin: 0.5rem 0 0;
+  font-size: 1.25em;
+  font-weight: 600;
+}
+
+.feature-text {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.5;
+  flex-grow: 1;
+}
+
+.feature-link {
+  margin-top: 0.5rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.feature-badge {
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  padding: 0.2rem 0.65rem;
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text-soft);
+  font-size: 0.8em;
+}
+
+/* Le card "in arrivo" sono un po' più tenui */
+.feature-card.is-soon {
+  opacity: 0.85;
 }
