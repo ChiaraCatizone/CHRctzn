@@ -21,8 +21,10 @@ src/
   main.js               punto di partenza: crea l'app, aggiunge router, Bootstrap e stili globali
   App.vue               layout: navbar + pagina corrente (<RouterView />)
   router/index.js       elenco delle pagine (URL → componente)
+  i18n/                 traduzioni: it.js, en.js e la logica della lingua (vue-i18n)
+  composables/          logica riusabile (useTheme: modalità giorno/notte)
   assets/styles/        CSS globali
-  components/           pezzi riusabili (AppNavigation, LogoLine, ImageCard)
+  components/           pezzi riusabili (AppNavigation, ImageCard)
   views/                le pagine (HomeView, AboutView)
 ```
 
@@ -36,6 +38,24 @@ Ogni file `.vue` ha tre parti: `<script setup>` (la logica), `<template>` (l'HTM
    `{ path: '/projects', name: 'projects', component: () => import('@/views/ProjectsView.vue') }`
 3. Aggiungi il link nella navbar (`src/components/AppNavigation.vue`):
    `<RouterLink class="nav-link pill" to="/projects" active-class="active">Projects</RouterLink>`
+
+## Testi e traduzioni
+
+Tutti i testi del sito stanno in `src/i18n/it.js` e `src/i18n/en.js`, con le stesse chiavi.
+Nei componenti si usano così:
+
+```vue
+<script setup>
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+</script>
+
+<template>
+  <h1>{{ t('home.subtitle') }}</h1>
+</template>
+```
+
+Per aggiungere un testo: aggiungi la stessa chiave in **entrambi** i file, poi usala con `t('...')`.
 
 ## Sintassi di base nel template
 

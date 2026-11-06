@@ -41,7 +41,7 @@
 
 /* === Font === */
 :root {
-  --font-heading: 'Schibsted Grotesk Variable', 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: 'Hanken Grotesk Variable', 'Helvetica Neue', Arial, sans-serif;
 }
 
 h1,
@@ -51,6 +51,7 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
+  font-weight: 300; /* titoli sottili; la scala va da 100 (finissimo) a 900 */
   letter-spacing: -0.02em;
   color: var(--heading);
 }
@@ -92,11 +93,17 @@ svg {
   width: -webkit-fill-available;
 }
 
+/* === Larghezza e margini laterali della pagina ===
+   Usati sia dal contenuto (.main) sia dalla navbar, così sono sempre allineati. */
+:root {
+  --page-max: 1200px;
+  --page-gutter: 2em;
+}
+
 .main {
-  /* la pagina ora scorre normalmente: niente altezze fisse */
-  max-width: 1200px;
+  max-width: var(--page-max);
   margin: 0 auto;
-  padding: 1em 2em 4em;
+  padding: 1em var(--page-gutter) 4em;
 }
 
 .row {

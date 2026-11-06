@@ -1,32 +1,20 @@
 <script setup>
 import { RouterLink } from 'vue-router'
+import { useI18n } from 'vue-i18n'
 
-// Le card della home: aggiungi, togli o modifica gli elementi di questo array.
+const { t } = useI18n()
+
+// Le card della home. I testi stanno in src/i18n/it.js ed en.js, sotto home.cards.<key>
 // - icon: un emoji (o lascialo vuoto)
 // - link: se c'è, tutta la card diventa cliccabile
-// - soon: true mostra l'etichetta "In arrivo"
+// - soon: true mostra l'etichetta "In arrivo" / "Coming soon"
 const sections = [
-  {
-    icon: '📄',
-    title: 'Curriculum Vitae',
-    text: 'Il mio percorso, le esperienze e le competenze.',
-    link: { to: '/about', label: 'Vai al CV' },
-  },
-  {
-    icon: '🛠️',
-    title: 'Progetti',
-    text: 'Le cose che ho costruito e a cui sto lavorando.',
-    soon: true,
-  },
-  {
-    icon: '🎨',
-    title: 'Esperimenti',
-    text: 'Prove di design, animazioni e componenti.',
-    soon: true,
-  },
-  { icon: '✍️', title: 'Note', text: 'Appunti su quello che sto imparando.', soon: true },
-  { icon: '📷', title: 'Galleria', text: 'Immagini e lavori visivi.', soon: true },
-  { icon: '✉️', title: 'Contatti', text: 'Dove trovarmi e come scrivermi.', soon: true },
+  { key: 'cv', icon: '📄', link: '/about' },
+  { key: 'projects', icon: '🛠️', soon: true },
+  { key: 'experiments', icon: '🎨', soon: true },
+  { key: 'notes', icon: '✍️', soon: true },
+  { key: 'gallery', icon: '📷', soon: true },
+  { key: 'contacts', icon: '✉️', soon: true },
 ]
 </script>
 
@@ -34,14 +22,14 @@ const sections = [
   <main class="main">
     <section class="intro">
       <div class="melting-text-container">
-        <h1 class="melting-text">Congrats Stranger,</h1>
+        <h1 class="melting-text">{{ t('home.greeting') }}</h1>
       </div>
-      <h1 class="subtitle">you just landed on my Web Page!</h1>
-      <p class="lead-text">Construction is happening. 🎉</p>
+      <h1 class="subtitle">{{ t('home.subtitle') }}</h1>
+      <p class="lead-text">{{ t('home.construction') }}</p>
     </section>
 
     <section>
-      <h2 class="section-title">Here you will find</h2>
+      <h2 class="section-title">{{ t('home.sectionTitle') }}</h2>
 
       <div class="cards-grid">
         <!--
@@ -51,21 +39,21 @@ const sections = [
         <component
           :is="section.link ? RouterLink : 'article'"
           v-for="section in sections"
-          :key="section.title"
-          :to="section.link?.to"
+          :key="section.key"
+          :to="section.link"
           class="feature-card"
           :class="{ 'is-link': section.link, 'is-soon': section.soon }"
         >
           <span v-if="section.icon" class="feature-icon" aria-hidden="true">{{
             section.icon
           }}</span>
-          <h3 class="feature-title">{{ section.title }}</h3>
-          <p v-if="section.text" class="feature-text">{{ section.text }}</p>
+          <h3 class="feature-title">{{ t(`home.cards.${section.key}.title`) }}</h3>
+          <p class="feature-text">{{ t(`home.cards.${section.key}.text`) }}</p>
 
           <span v-if="section.link" class="feature-link">
-            {{ section.link.label }} <span aria-hidden="true">→</span>
+            {{ t('home.goToCv') }} <span aria-hidden="true">→</span>
           </span>
-          <span v-else-if="section.soon" class="feature-badge">In arrivo</span>
+          <span v-else-if="section.soon" class="feature-badge">{{ t('home.soon') }}</span>
         </component>
       </div>
     </section>
