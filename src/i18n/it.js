@@ -17,8 +17,8 @@ export default {
     short: 'EN',
   },
   home: {
-    greeting: 'Ehi, tu,',
-    subtitle: 'hai appena trovato la mia pagina web!',
+    greeting: 'Benvenuto straniero! 👽',
+    subtitle: 'Sei appena atterrato sulla mia pagina web...',
     construction: 'Lavori in corso. 🎉',
     sectionTitle: 'Qui troverai',
     goToCv: 'Vai al CV',

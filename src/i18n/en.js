@@ -17,8 +17,8 @@ export default {
     short: 'IT',
   },
   home: {
-    greeting: 'Congrats Stranger,',
-    subtitle: 'you just landed on my Web Page!',
+    greeting: 'Congrats Stranger! 👽',
+    subtitle: 'you just landed on my Web Page...',
     construction: 'Construction is happening. 🎉',
     sectionTitle: 'Here you will find',
     goToCv: 'Go to CV',
