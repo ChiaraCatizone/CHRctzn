@@ -1,0 +1,75 @@
+.navbar {
+  --bs-navbar-color: antiquewhite;
+  --bs-nav-link-hover-color: antiquewhite;
+  height: fit-content;
+  position: absolute;
+}
+
+.nav-link {
+  font-size: 2em;
+}
+
+.nav-link.active,
+.nav-link:hover,
+.navbar-nav .nav-link.show,
+button.navbar-toggler {
+  color: antiquewhite;
+  background-color: rgba(250, 235, 215, 0.109);
+  border-radius: 10px;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='antiquewhite' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.nav-item {
+  margin-left: 1em;
+}
+
+.dropdown-menu {
+  width: -webkit-fill-available;
+  background-color: rgba(250, 235, 215, 0.671) !important;
+}
+.glitch-text {
+  font-size: 5rem;
+  font-weight: bold;
+  position: relative;
+  color: #fff;
+  animation: glitch 3s infinite;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: "Chiara's";
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #595366;
+  background: transparent;
+  clip-path: polygon(0 0, 100% 0, 100% 30%, 0 30%);
+  animation: glitch 3s infinite;
+}
+
+.glitch-text::after {
+  color: #595366;
+  clip-path: polygon(0 70%, 100% 70%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch {
+  0%,
+  100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(2px, -2px);
+  }
+  60% {
+    transform: translate(-1px, 1px);
+  }
+  80% {
+    transform: translate(1px, -1px);
+  }
+}
