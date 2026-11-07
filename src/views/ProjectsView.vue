@@ -2,6 +2,7 @@
 import { computed, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { projects } from '@/data/projects'
+import BackHome from '@/components/BackHome.vue'
 
 const { t } = useI18n()
 
@@ -22,7 +23,10 @@ const visibleProjects = computed(() =>
 <template>
   <main class="main">
     <header class="projects-header">
-      <h1>{{ t('projects.title') }}</h1>
+      <div class="page-title-row">
+        <h1>{{ t('projects.title') }}</h1>
+        <BackHome />
+      </div>
       <p class="code-comment">// {{ t('projects.intro') }}</p>
     </header>
 

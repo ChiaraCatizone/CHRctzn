@@ -50,49 +50,6 @@ const { toggleLanguage } = useLanguage()
             </svg>
           </button>
         </div>
-
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNavDropdown"
-          aria-controls="navbarNavDropdown"
-          aria-expanded="false"
-          :aria-label="t('nav.menu')"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <RouterLink class="nav-link pill" to="/about" active-class="active">
-                {{ t('nav.about') }}
-              </RouterLink>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link pill dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                {{ t('nav.examples') }}
-              </a>
-              <ul class="dropdown-menu glass-dropdown">
-                <li>
-                  <a class="dropdown-item" href="#">{{ t('nav.action') }}</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">{{ t('nav.anotherAction') }}</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" href="#">{{ t('nav.somethingElse') }}</a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
       </div>
     </nav>
   </div>

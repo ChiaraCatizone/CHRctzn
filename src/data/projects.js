@@ -13,7 +13,6 @@ export const projects = [
     year: 2026,
     stack: ['Vue', 'Vite', 'vue-i18n', 'Bootstrap'],
     demo: null,
-    github: 'https://github.com/ChiaraCatizone/CHRctzn',
   },
   {
     id: 'cartooNlp',

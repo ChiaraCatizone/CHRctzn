@@ -1,13 +1,15 @@
 <script setup>
-import { RouterLink } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 
 const { t } = useI18n()
 
 // Le card della home. I testi stanno in src/i18n/it.js ed en.js, sotto home.cards.<key>
 // - icon: un emoji (o lascialo vuoto)
-// - link: se c'è, tutta la card diventa cliccabile
+// - link: se c'è, in fondo alla card compare il link (la CTA)
 // - soon: true mostra l'etichetta "In arrivo" / "Coming soon"
+// I paragrafi della sezione "Chi sono": i testi sono in home.about.p1 ... p7
+const aboutParagraphs = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7']
+
 const sections = [
   { key: 'cv', icon: '📄', link: '/curriculum' },
   { key: 'projects', icon: '🛠️', link: '/projects' },
@@ -27,21 +29,22 @@ const sections = [
       <h1 class="subtitle">{{ t('home.subtitle') }}</h1>
     </section>
 
+    <!-- Chi sono -->
+    <section class="about">
+      <h2 class="section-title">{{ t('home.about.title') }}</h2>
+      <p v-for="key in aboutParagraphs" :key="key">{{ t(`home.about.${key}`) }}</p>
+    </section>
+
     <section>
       <h2 class="section-title">{{ t('home.sectionTitle') }}</h2>
 
       <div class="cards-grid">
-        <!--
-          <component :is> sceglie il tag: un RouterLink se la card ha un link,
-          altrimenti un semplice <article>.
-        -->
-        <component
-          :is="section.link ? RouterLink : 'article'"
+        <!-- La card è solo un contenitore: è cliccabile solo il link (RouterLink) in fondo -->
+        <article
           v-for="section in sections"
           :key="section.key"
-          :to="section.link"
           class="feature-card"
-          :class="{ 'is-link': section.link, 'is-soon': section.soon }"
+          :class="{ 'is-soon': section.soon }"
         >
           <span v-if="section.icon" class="feature-icon" aria-hidden="true">{{
             section.icon
@@ -49,11 +52,11 @@ const sections = [
           <h3 class="feature-title">{{ t(`home.cards.${section.key}.title`) }}</h3>
           <p class="feature-text">{{ t(`home.cards.${section.key}.text`) }}</p>
 
-          <span v-if="section.link" class="feature-link">
+          <RouterLink v-if="section.link" :to="section.link" class="feature-link">
             {{ t(`home.cards.${section.key}.cta`) }} <span aria-hidden="true">→</span>
-          </span>
+          </RouterLink>
           <span v-else-if="section.soon" class="feature-badge">{{ t('home.soon') }}</span>
-        </component>
+        </article>
       </div>
     </section>
   </main>

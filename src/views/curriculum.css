@@ -11,7 +11,7 @@
   color: var(--code-comment);
 }
 
-.cv-header h1 {
+.cv-header .page-title-row {
   margin-bottom: 0.25rem;
 }
 
@@ -29,13 +29,12 @@
 }
 
 .cv-meta a {
-  color: var(--heading);
+  color: var(--accent);
   text-decoration: none;
 }
 
 .cv-meta a:hover,
 .cv-meta a:focus-visible {
-  color: var(--code-keyword);
   text-decoration: underline;
   text-underline-offset: 3px;
 }

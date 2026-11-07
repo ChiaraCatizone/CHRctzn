@@ -33,6 +33,17 @@
   margin-bottom: 1em;
 }
 
+/* === Chi sono === */
+.about {
+  margin-bottom: 3em;
+}
+
+.about p {
+  max-width: 95ch; /* righe non troppo lunghe, si leggono meglio */
+  line-height: 1.7;
+  color: var(--text);
+}
+
 /* === Griglia delle card ===
    auto-fill + minmax: il browser mette tante colonne quante ne entrano,
    ognuna larga almeno 240px. Niente media query necessarie. */
@@ -56,16 +67,17 @@
   backdrop-filter: blur(8px);
 }
 
-.feature-card:hover,
-.feature-card:focus-visible {
-  box-shadow: var(--card-shadow);
-  border-color: var(--accent);
-  color: var(--text);
+/* Solo il link è cliccabile: al passaggio del mouse si sottolinea */
+.feature-link:hover,
+.feature-link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
-.feature-card:focus-visible {
+.feature-link:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
+  border-radius: 4px;
 }
 
 .feature-icon {
@@ -92,7 +104,9 @@
 }
 
 .feature-link {
+  align-self: flex-start;
   margin-top: 0.5rem;
+  text-decoration: none;
   color: var(--accent);
   font-weight: 500;
 }

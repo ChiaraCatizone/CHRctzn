@@ -15,28 +15,3 @@
     position: relative;
   }
 }
-
-/* Mobile Breakpoint */
-@media only screen and (max-width: 440px) {
-  .navbar-collapse {
-    background-color: rgb(250, 235, 215) !important;
-    padding: 1em;
-  }
-
-  .nav-item {
-    margin: 0;
-  }
-
-  .nav-link.pill.active {
-    padding: 1em;
-  }
-
-  .nav-link.pill,
-  .nav-link.pill.active {
-    color: black;
-  }
-
-  .nav-link.pill.active {
-    background-color: #9583c072;
-  }
-}

@@ -25,7 +25,7 @@ src/
   composables/          logica riusabile (useTheme: modalità giorno/notte)
   assets/styles/        CSS globali
   components/           pezzi riusabili (AppNavigation, ImageCard)
-  views/                le pagine (HomeView, AboutView)
+  views/                le pagine (HomeView, CurriculumView, ProjectsView)
 ```
 
 Ogni file `.vue` ha tre parti: `<script setup>` (la logica), `<template>` (l'HTML) e
@@ -33,11 +33,14 @@ Ogni file `.vue` ha tre parti: `<script setup>` (la logica), `<template>` (l'HTM
 
 ## Aggiungere una pagina
 
-1. Crea `src/views/ProjectsView.vue`
+1. Crea `src/views/NotesView.vue`
 2. Aggiungila in `src/router/index.js`:
-   `{ path: '/projects', name: 'projects', component: () => import('@/views/ProjectsView.vue') }`
-3. Aggiungi il link nella navbar (`src/components/AppNavigation.vue`):
-   `<RouterLink class="nav-link pill" to="/projects" active-class="active">Projects</RouterLink>`
+   `{ path: '/notes', name: 'notes', component: () => import('@/views/NotesView.vue') }`
+3. Nella pagina metti il titolo con la freccia per tornare alla home:
+   `<div class="page-title-row"><h1>...</h1><BackHome /></div>`
+   (con `import BackHome from '@/components/BackHome.vue'`)
+4. Collegala dalla home (una card in `src/views/HomeView.vue`) o dalla navbar
+   (`src/components/AppNavigation.vue`)
 
 ## Testi e traduzioni
 
@@ -83,7 +86,7 @@ Impostazioni del progetto Pages (**Settings → Build**):
 | Output directory | `dist`          |
 
 Se il progetto è collegato a GitHub, ogni `git push` pubblica il sito da solo.
-`public/_redirects` fa funzionare anche URL come `/about` quando ricarichi la pagina.
+`public/_redirects` fa funzionare anche URL come `/projects` quando ricarichi la pagina.
 
 ## Strumenti consigliati
 
