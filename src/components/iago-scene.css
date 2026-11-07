@@ -207,6 +207,31 @@
   }
 }
 
+/* Fino a Mobile L (425px) non c'è spazio per camminare:
+   Iago resta seduto accanto al computer e muove solo la coda */
+@media (max-width: 425px) {
+  .cat,
+  .walking,
+  .turning,
+  .sitting {
+    animation: none;
+  }
+
+  .cat {
+    left: var(--cat-stop);
+    transform: scaleX(-1);
+  }
+
+  .walking,
+  .turning {
+    opacity: 0;
+  }
+
+  .sitting {
+    opacity: 1;
+  }
+}
+
 /* Accessibilità: se il sistema chiede meno animazioni, Iago resta seduto accanto al computer */
 @media (prefers-reduced-motion: reduce) {
   .cat,
