@@ -11,9 +11,9 @@ const sections = [
   { key: 'about', icon: '👋', link: '/about' },
   { key: 'cv', icon: '📄', link: '/curriculum' },
   { key: 'projects', icon: '🛠️', link: '/projects' },
-  { key: 'experiments', icon: '🎨', soon: true },
-  { key: 'notes', icon: '✍️', soon: true },
-  { key: 'gallery', icon: '📷', soon: true },
+  // { key: 'experiments', icon: '🎨', soon: true },
+  // { key: 'notes', icon: '✍️', soon: true },
+  // { key: 'gallery', icon: '📷', soon: true },
 ]
 </script>
 

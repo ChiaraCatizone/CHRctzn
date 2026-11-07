@@ -127,6 +127,50 @@
   color: var(--heading);
 }
 
+/* === Tasto per scaricare il PDF: stessa pillola dei contatti nel footer === */
+.cv-download {
+  margin-top: 1rem;
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.7rem 1.25rem;
+  border: 1px solid var(--surface-strong);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--heading);
+  font: inherit;
+  font-size: 1.05em;
+  cursor: pointer;
+}
+
+.download-btn:hover {
+  background: var(--surface-strong);
+}
+
+.download-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.download-btn:disabled {
+  cursor: progress;
+  opacity: 0.7;
+}
+
+/* Stesso tratto delle altre icone del sito */
+.download-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
 /* Su schermi stretti restano le due colonne: la colonna delle date si stringe
    e il periodo va a capo su due righe ("mar 2024 –" / "mar 2026") */
 @media (max-width: 600px) {

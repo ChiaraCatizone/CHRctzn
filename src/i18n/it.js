@@ -68,6 +68,8 @@ export default {
     present: 'Presente',
     experienceTitle: 'Esperienza',
     educationTitle: 'Formazione',
+    download: 'Scarica il CV in PDF',
+    downloading: 'Preparo il PDF…',
     skillsTitle: 'Competenze',
     grade: 'Voto',
     experience: {

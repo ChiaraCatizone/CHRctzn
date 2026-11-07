@@ -1,4 +1,5 @@
 <script setup>
+import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { education, experience, linkedin, skills } from '@/data/cv'
 import BackHome from '@/components/BackHome.vue'
@@ -17,6 +18,19 @@ function formatMonth(ym) {
 
 function period(item) {
   return `${formatMonth(item.start)} – ${formatMonth(item.end)}`
+}
+
+// Tasto "Scarica il CV in PDF": crea il PDF nella lingua attuale (vedi src/utils/cvPdf.js)
+const downloading = ref(false)
+
+async function downloadPdf() {
+  downloading.value = true
+  try {
+    const { downloadCvPdf } = await import('@/utils/cvPdf')
+    await downloadCvPdf({ t, period, experience, education, skills, linkedin })
+  } finally {
+    downloading.value = false
+  }
 }
 </script>
 
@@ -77,6 +91,16 @@ function period(item) {
         <li v-for="skill in skills" :key="skill">{{ skill }}</li>
       </ul>
     </section>
+
+    <!-- Scarica il CV in PDF -->
+    <div class="cv-download">
+      <button type="button" class="download-btn" :disabled="downloading" @click="downloadPdf">
+        <svg class="download-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 4v11M7 10l5 5 5-5M5 19h14" />
+        </svg>
+        {{ downloading ? t('curriculum.downloading') : t('curriculum.download') }}
+      </button>
+    </div>
   </main>
 </template>
 
