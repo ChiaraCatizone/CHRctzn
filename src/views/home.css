@@ -23,6 +23,8 @@
 }
 
 .lead-text {
+  max-width: 60ch;
+  margin-top: 1rem;
   color: var(--text-soft);
   font-size: 1.15em;
 }
@@ -31,17 +33,6 @@
   font-size: 1.5em;
   font-weight: 400;
   margin-bottom: 1em;
-}
-
-/* === Chi sono === */
-.about {
-  margin-bottom: 3em;
-}
-
-.about p {
-  max-width: 95ch; /* righe non troppo lunghe, si leggono meglio */
-  line-height: 1.7;
-  color: var(--text);
 }
 
 /* === Griglia delle card ===

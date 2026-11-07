@@ -25,7 +25,7 @@ src/
   composables/          logica riusabile (useTheme: modalità giorno/notte)
   assets/styles/        CSS globali
   components/           pezzi riusabili (AppNavigation, ImageCard)
-  views/                le pagine (HomeView, CurriculumView, ProjectsView)
+  views/                le pagine (HomeView, AboutView, CurriculumView, ProjectsView)
 ```
 
 Ogni file `.vue` ha tre parti: `<script setup>` (la logica), `<template>` (l'HTML) e

@@ -1,0 +1,10 @@
+.about-header {
+  padding-top: 2em;
+  margin-bottom: 2em;
+}
+
+.about p {
+  max-width: 70ch; /* righe non troppo lunghe, si leggono meglio */
+  line-height: 1.7;
+  color: var(--text);
+}

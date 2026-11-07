@@ -7,16 +7,13 @@ const { t } = useI18n()
 // - icon: un emoji (o lascialo vuoto)
 // - link: se c'è, in fondo alla card compare il link (la CTA)
 // - soon: true mostra l'etichetta "In arrivo" / "Coming soon"
-// I paragrafi della sezione "Chi sono": i testi sono in home.about.p1 ... p7
-const aboutParagraphs = ['p1', 'p2', 'p3', 'p4', 'p5', 'p6', 'p7']
-
 const sections = [
+  { key: 'about', icon: '👋', link: '/about' },
   { key: 'cv', icon: '📄', link: '/curriculum' },
   { key: 'projects', icon: '🛠️', link: '/projects' },
   { key: 'experiments', icon: '🎨', soon: true },
   { key: 'notes', icon: '✍️', soon: true },
   { key: 'gallery', icon: '📷', soon: true },
-  { key: 'contacts', icon: '✉️', soon: true },
 ]
 </script>
 
@@ -27,12 +24,7 @@ const sections = [
         <h1 class="melting-text">{{ t('home.greeting') }}</h1>
       </div>
       <h1 class="subtitle">{{ t('home.subtitle') }}</h1>
-    </section>
-
-    <!-- Chi sono -->
-    <section class="about">
-      <h2 class="section-title">{{ t('home.about.title') }}</h2>
-      <p v-for="key in aboutParagraphs" :key="key">{{ t(`home.about.${key}`) }}</p>
+      <p class="lead-text">{{ t('home.description') }}</p>
     </section>
 
     <section>
