@@ -1,6 +1,7 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 import { education, experience, linkedin, skills } from '@/data/cv'
+import BackHome from '@/components/BackHome.vue'
 
 const { t, locale } = useI18n()
 
@@ -24,7 +25,10 @@ function period(item) {
     <!-- Intestazione -->
     <header class="cv-header">
       <p class="code-comment">// {{ t('curriculum.title') }}</p>
-      <h1>{{ t('curriculum.name') }}</h1>
+      <div class="page-title-row">
+        <h1>{{ t('curriculum.name') }}</h1>
+        <BackHome />
+      </div>
       <p class="cv-role">{{ t('curriculum.role') }}</p>
       <p class="cv-meta">
         {{ t('curriculum.location') }} ·

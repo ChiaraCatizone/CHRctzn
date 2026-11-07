@@ -1,12 +1,7 @@
 // Testi in italiano. Le chiavi devono essere le stesse di en.js.
 export default {
   nav: {
-    about: 'Chi sono',
-    examples: 'Esempi di componenti',
-    action: 'Azione',
-    anotherAction: "Un'altra azione",
-    somethingElse: "Qualcos'altro",
-    menu: 'Apri il menu',
+    backHome: 'Torna alla home',
   },
   theme: {
     toLight: 'Passa alla modalità giorno',
@@ -22,6 +17,16 @@ export default {
     construction: 'Lavori in corso. 🎉',
     sectionTitle: 'Qui troverai',
     soon: 'In arrivo',
+    about: {
+      title: 'Chi sono',
+      p1: 'Ciao, sono Chiara! Sono nata a Bolzano, da mamma bolzanina e papà calabrese: sono cresciuta tra canederli e Brasilena, montagne e mare, e forse è da lì che mi viene la naturalezza nello stare a metà tra mondi diversi.',
+      p2: 'Da ragazzina passavo le giornate a disegnare e a sperimentare con l’HTML. Dopo il liceo artistico, un anno in Irlanda grazie a una borsa di studio europea e una triennale legata all’arte a Bologna, dove vivo dal 2015, ha vinto la tecnologia (e la serotonina di un codice che funziona): ho scelto la magistrale in Digital Humanities.',
+      p3: 'In magistrale ho conosciuto persone davvero brillanti, e lavorare insieme a loro su diversi progetti è stato prezioso: mi ha fatto venire voglia di vedere da vicino come si costruisce il software ogni giorno, così ho deciso di entrare in azienda.',
+      p4: 'Oggi lavoro come software engineer in NTT DATA Gov&Tech e mi occupo soprattutto di backend in .NET. Ne vado molto orgogliosa, perché ci sono arrivata per una strada diversa e inaspettata.',
+      p5: 'L’arte però non l’ho mai lasciata davvero, perché non ho mai sentito il bisogno di scegliere una sola parte di me: mi piace essere una persona dai mille interessi, che passa dal codice alla matita senza sentirsi fuori posto in nessuno dei due mondi.',
+      p6: 'Lo stesso vale per il tempo libero, che riempio con tante passioni diverse: disegno, a matita o in digitale, leggo e gioco. Sono affezionata a Pokémon e al Professor Layton, e ho amato molto Uncharted e The Last of Us. Guardo anche parecchi anime: i miei preferiti sono Tokyo Ghoul, JoJo, The Apothecary Diaries ed Evangelion. Appena posso viaggio, e i posti che porto nel cuore sono il Giappone e la Corea del Sud.',
+      p7: 'Dalla fine del 2018 con me vive Iago, il mio gatto, che nel tempo si è guadagnato il ruolo di code reviewer ufficiale. Supervisiona ogni riga dalla sua postazione accanto alla tastiera, approva con le fusa e, quando qualcosa non lo convince, ci cammina sopra. Finora nessuna delle sue review è stata ignorata.',
+    },
     cards: {
       cv: {
         title: 'Curriculum Vitae',
@@ -39,9 +44,12 @@ export default {
       contacts: { title: 'Contatti', text: 'Dove trovarmi e come scrivermi.' },
     },
   },
-  about: {
-    title: 'Chi sono',
-    construction: 'Lavori in corso. 🎉',
+  footer: {
+    // {claude} viene sostituito dal link (vedi <i18n-t> in AppFooter.vue)
+    contactTitle: 'Parliamo?',
+    contactText: 'Se ti va di scrivermi, mi trovi qui.',
+    builtWith: 'fatto con',
+    help: 'con l’aiuto di {claude} come assistente',
   },
   curriculum: {
     title: 'Curriculum Vitae',

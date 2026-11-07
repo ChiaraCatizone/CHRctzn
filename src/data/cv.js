@@ -6,6 +6,7 @@
 // Date nel formato 'AAAA-MM'. end: null = "Presente"
 
 export const linkedin = 'https://www.linkedin.com/in/chiara-catizone-918a07195/'
+export const github = 'https://github.com/ChiaraCati'
 
 export const experience = [
   {

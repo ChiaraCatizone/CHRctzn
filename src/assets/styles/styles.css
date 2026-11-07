@@ -6,22 +6,22 @@
   color-scheme: dark;
   /* Pantone 19-4405 Forest River */
   --bg: #3b4142;
-  --bg-glow-1: rgba(149, 131, 192, 0.08);
+  --bg-glow-1: rgba(233, 227, 250, 0.08);
   --bg-glow-2: rgba(255, 189, 68, 0.05);
   /* Pantone 11-4201 Cloud Dancer */
   --text: #f0eee9;
   --heading: #f0eee9;
   --text-soft: rgba(240, 238, 233, 0.72);
   --surface: rgba(240, 238, 233, 0.08);
-  --surface-strong: rgba(228, 203, 243, 0.32);
-  --accent: #b9a7e6;
+  --surface-strong: rgba(233, 227, 250, 0.32);
+  --accent: #e9e3fa; /* violetto chiarissimo, quasi bianco */
   --card-bg: rgba(255, 255, 255, 0.04);
   --card-border: rgba(240, 238, 233, 0.14);
   --card-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
   /* colori "sintassi" per lo stile codice */
   --code-keyword: #e8b44a;
   --code-key: #f0eee9;
-  --code-string: #c9b8e8;
+  --code-string: #e9e3fa;
   --code-comment: rgba(240, 238, 233, 0.5);
   --code-punct: rgba(240, 238, 233, 0.6);
 }
@@ -118,20 +118,25 @@ svg {
   padding: 1em var(--page-gutter) 4em;
 }
 
+/* Riga del titolo nelle pagine secondarie: titolo a sinistra, freccia per la home a destra */
+.page-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-title-row > h1 {
+  margin-bottom: 0;
+}
+
 .row {
   padding: 0.5em;
 }
 
 /* === Niente animazioni ===
-   Bootstrap ha alcune animazioni sue (apertura del menu mobile, scorrimento morbido):
-   le spegniamo qui. */
+   Bootstrap di suo scorre la pagina in modo morbido: lo spegniamo qui. */
 :root {
   scroll-behavior: auto;
-}
-
-.collapsing,
-.nav-link,
-.navbar-toggler,
-.dropdown-item {
-  transition: none;
 }
