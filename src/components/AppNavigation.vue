@@ -12,12 +12,6 @@ const { toggleLanguage } = useLanguage()
   <div class="head">
     <nav class="navbar glass z-1 top-0 navbar-expand-lg">
       <div class="container-fluid">
-        <RouterLink class="navbar-brand" to="/" exact-active-class="active">
-          <div class="glitch-container">
-            <h1 class="glitch-text">CHIARA'S</h1>
-          </div>
-        </RouterLink>
-
         <!-- I due tasti rotondi: lingua e tema -->
         <div class="nav-actions">
           <!-- Lingua: mostra la lingua in cui si passa cliccando -->

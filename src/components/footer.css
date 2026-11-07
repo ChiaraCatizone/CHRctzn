@@ -1,6 +1,22 @@
 /* Stessa larghezza e stessi margini del contenuto (.main) */
 .site-footer {
+  position: relative;
   border-top: 1px solid var(--card-border);
+}
+
+/* La scena di Iago (solo in About) poggia sulla linea in cima al footer */
+.footer-scene {
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  pointer-events: none;
+}
+
+.footer-scene-inner {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 var(--page-gutter);
 }
 
 .footer-inner {

@@ -1,9 +1,5 @@
 /* Tablet Breakpoint */
 @media only screen and (max-width: 768px) {
-  .glitch-text {
-    font-size: 3rem;
-  }
-
   .navbar {
     position: relative;
   }

@@ -1,8 +1,13 @@
 <script setup>
+import { useRoute } from 'vue-router'
 import { useI18n } from 'vue-i18n'
 import { contacts } from '@/data/contacts'
+import IagoScene from './IagoScene.vue'
 
 const { t } = useI18n()
+
+// useRoute() dice in che pagina siamo: Iago passeggia solo nella pagina About
+const route = useRoute()
 
 // L'anno si aggiorna da solo
 const year = new Date().getFullYear()
@@ -31,6 +36,13 @@ const icons = {
 
 <template>
   <footer class="site-footer">
+    <!-- Solo in About: Iago cammina sulla linea del footer, fino al computer -->
+    <div v-if="route.name === 'about'" class="footer-scene">
+      <div class="footer-scene-inner">
+        <IagoScene />
+      </div>
+    </div>
+
     <div class="footer-inner">
       <!-- Contatti: titolo a sinistra, link a pillola con icona a destra -->
       <div class="footer-contact">

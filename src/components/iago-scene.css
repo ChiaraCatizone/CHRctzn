@@ -1,0 +1,233 @@
+/* La scena: poggia sulla linea in cima al footer, che fa da pavimento */
+.scene {
+  --cat-width: 13.85rem;
+  --pc-width: 18rem;
+  /* Dove si siede Iago: poco prima del computer, senza toccarlo */
+  --cat-stop: calc(100% - var(--pc-width) * 0.67 - var(--cat-width) * 0.86 - 1rem);
+  /* Durata di un giro: ~14s per andare, ~4s al computer, ~14s per tornare, ~0,85s fermo a sinistra */
+  --loop: 32.3s;
+
+  position: relative;
+  height: 11.1rem;
+  overflow: hidden;
+}
+
+.scene-defs {
+  position: absolute;
+}
+
+/* Linee sottili come le altre illustrazioni del sito */
+.line-art {
+  display: block;
+  width: 100%;
+  height: auto;
+  fill: none;
+  stroke: var(--heading);
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.line-art .eye {
+  fill: var(--heading);
+  stroke: none;
+}
+
+.line-art .nose {
+  fill: var(--accent);
+  stroke: none;
+}
+
+.line-art .head {
+  fill: var(--bg); /* copre le linee del corpo che passano dietro la testa */
+}
+
+/* Sagoma piena del corpo, senza bordo: nasconde l'attaccatura della coda */
+.line-art .body-fill {
+  fill: var(--bg);
+  stroke: none;
+}
+
+.line-art .screen {
+  stroke: var(--accent);
+}
+
+/* La linea del disegno (y = 66 su 67) cade proprio sulla linea del footer */
+.computer,
+.cat {
+  position: absolute;
+  bottom: calc(var(--w) * -0.0075);
+}
+
+/* === Il computer, fermo a destra === */
+.computer {
+  --w: var(--pc-width);
+  right: 0;
+  width: var(--pc-width);
+}
+
+/* === Iago === */
+.cat {
+  --w: var(--cat-width);
+  left: 0;
+  width: var(--cat-width);
+  animation: cat-walk var(--loop) linear infinite;
+}
+
+/*
+  Il giro (32,3s). Le pose cambiano a scatti, come i fotogrammi di un cartone:
+  0%       → 42,33%  cammina verso il computer
+  42,33%   → 43,42%  si ferma e si gira verso chi guarda (posa intermedia, ~0,35s)
+  43,42%   → 53,66%  seduto, già rivolto a sinistra (~3,3s)
+  53,66%   → 54,74%  si rialza girato verso chi guarda (posa intermedia)
+  54,74%   → 97,37%  torna a sinistra
+  97,37%   → 100%    a sinistra resta girato verso chi guarda (~0,85s), poi riparte
+*/
+@keyframes cat-walk {
+  0% {
+    left: 0;
+    transform: scaleX(1);
+  }
+  42.33% {
+    left: var(--cat-stop);
+    transform: scaleX(1);
+  }
+  /* Quando si gira verso chi guarda ha già la coda dal lato in cui sarà da seduto */
+  42.34% {
+    left: var(--cat-stop);
+    transform: scaleX(-1);
+  }
+  54.74% {
+    left: var(--cat-stop);
+    transform: scaleX(-1);
+  }
+  97.37% {
+    left: 0;
+    transform: scaleX(-1);
+  }
+  /* A sinistra la coda passa subito dal lato in cui sarà mentre cammina verso destra */
+  97.38% {
+    left: 0;
+    transform: scaleX(1);
+  }
+  100% {
+    left: 0;
+    transform: scaleX(1);
+  }
+}
+
+/* Quale posa si vede: in cammino, girato verso chi guarda o seduto */
+.walking {
+  animation: show-walking var(--loop) steps(1) infinite;
+}
+
+.turning {
+  opacity: 0;
+  animation: show-turning var(--loop) steps(1) infinite;
+}
+
+.sitting {
+  opacity: 0;
+  animation: show-sitting var(--loop) steps(1) infinite;
+}
+
+@keyframes show-walking {
+  0% {
+    opacity: 1;
+  }
+  42.33% {
+    opacity: 0;
+  }
+  54.74% {
+    opacity: 1;
+  }
+  97.37% {
+    opacity: 0;
+  }
+}
+
+@keyframes show-turning {
+  0% {
+    opacity: 0;
+  }
+  42.33% {
+    opacity: 1;
+  }
+  43.42% {
+    opacity: 0;
+  }
+  53.66% {
+    opacity: 1;
+  }
+  54.74% {
+    opacity: 0;
+  }
+  97.37% {
+    opacity: 1;
+  }
+}
+
+@keyframes show-sitting {
+  0% {
+    opacity: 0;
+  }
+  43.42% {
+    opacity: 1;
+  }
+  53.66% {
+    opacity: 0;
+  }
+}
+
+/* Il passo: le due pose si alternano come i fotogrammi di un cartone */
+.pose-a {
+  animation: cat-pose 0.7s steps(1) infinite;
+}
+
+.pose-b {
+  opacity: 0;
+  animation: cat-pose 0.7s steps(1) infinite reverse;
+}
+
+@keyframes cat-pose {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Su schermi stretti gatto e computer sono più piccoli, così Iago ha spazio per camminare */
+@media (max-width: 600px) {
+  .scene {
+    --cat-width: 9.6rem;
+    --pc-width: 12.6rem;
+    height: 7.8rem;
+  }
+}
+
+/* Accessibilità: se il sistema chiede meno animazioni, Iago resta seduto accanto al computer */
+@media (prefers-reduced-motion: reduce) {
+  .cat,
+  .walking,
+  .turning,
+  .sitting,
+  .pose-a,
+  .pose-b {
+    animation: none;
+  }
+
+  .cat {
+    left: var(--cat-stop);
+    transform: scaleX(-1);
+  }
+
+  .walking {
+    opacity: 0;
+  }
+
+  .sitting {
+    opacity: 1;
+  }
+}

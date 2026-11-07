@@ -40,6 +40,7 @@ export default {
   },
   about: {
     title: 'About me',
+    illustration: 'A canederlo plus a Brasilena makes a heart',
     p1: 'Hi, I’m Chiara! I was born in Bolzano, to a mum from Bolzano and a dad from Calabria: I grew up between canederli and Brasilena, mountains and sea, and maybe that’s where my ease at living halfway between different worlds comes from.',
     p2: 'As a teenager I spent my days drawing and tinkering with HTML. After art school, a year in Ireland on a European scholarship and an art-related bachelor’s in Bologna, where I’ve lived since 2015, technology won (along with the serotonin of working code): I chose a master’s in Digital Humanities.',
     p3: 'During my master’s I met some truly brilliant people, and working with them on different projects was invaluable: it made me want to see up close how software gets built every day, so I decided to join a company.',
