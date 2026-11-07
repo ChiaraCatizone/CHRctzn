@@ -7,6 +7,12 @@ const router = createRouter({
     { path: '/', name: 'home', component: HomeView },
     // Le altre pagine si caricano solo quando servono (lazy loading)
     { path: '/about', name: 'about', component: () => import('@/views/AboutView.vue') },
+    {
+      path: '/curriculum',
+      name: 'curriculum',
+      component: () => import('@/views/CurriculumView.vue'),
+    },
+    { path: '/projects', name: 'projects', component: () => import('@/views/ProjectsView.vue') },
   ],
 })
 
