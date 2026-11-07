@@ -18,6 +18,12 @@
   --card-bg: rgba(255, 255, 255, 0.04);
   --card-border: rgba(240, 238, 233, 0.14);
   --card-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  /* colori "sintassi" per lo stile codice */
+  --code-keyword: #e8b44a;
+  --code-key: #f0eee9;
+  --code-string: #c9b8e8;
+  --code-comment: rgba(240, 238, 233, 0.5);
+  --code-punct: rgba(240, 238, 233, 0.6);
 }
 
 :root[data-theme='light'] {
@@ -37,11 +43,17 @@
   --card-bg: rgba(255, 255, 255, 0.75);
   --card-border: rgba(35, 32, 44, 0.08);
   --card-shadow: 0 12px 30px rgba(111, 90, 168, 0.15);
+  --code-keyword: #9a6a12;
+  --code-key: #3b4142;
+  --code-string: #6f5aa8;
+  --code-comment: rgba(59, 65, 66, 0.55);
+  --code-punct: rgba(59, 65, 66, 0.6);
 }
 
 /* === Font === */
 :root {
   --font-heading: 'Hanken Grotesk Variable', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, Menlo, monospace;
 }
 
 h1,

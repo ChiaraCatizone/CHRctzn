@@ -10,6 +10,8 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 
 // Font dei titoli (alternativa gratuita a Founders Grotesk), servito dal sito stesso
 import '@fontsource-variable/hanken-grotesk'
+// Font monospazio per lo stile "codice" (pagina progetti)
+import '@fontsource-variable/jetbrains-mono'
 
 // Stili globali del sito
 import './assets/styles/styles.css'

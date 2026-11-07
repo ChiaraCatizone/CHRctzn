@@ -9,8 +9,8 @@ const { t } = useI18n()
 // - link: se c'è, tutta la card diventa cliccabile
 // - soon: true mostra l'etichetta "In arrivo" / "Coming soon"
 const sections = [
-  { key: 'cv', icon: '📄', link: '/about' },
-  { key: 'projects', icon: '🛠️', soon: true },
+  { key: 'cv', icon: '📄', link: '/curriculum' },
+  { key: 'projects', icon: '🛠️', link: '/projects' },
   { key: 'experiments', icon: '🎨', soon: true },
   { key: 'notes', icon: '✍️', soon: true },
   { key: 'gallery', icon: '📷', soon: true },
@@ -50,7 +50,7 @@ const sections = [
           <p class="feature-text">{{ t(`home.cards.${section.key}.text`) }}</p>
 
           <span v-if="section.link" class="feature-link">
-            {{ t('home.goToCv') }} <span aria-hidden="true">→</span>
+            {{ t(`home.cards.${section.key}.cta`) }} <span aria-hidden="true">→</span>
           </span>
           <span v-else-if="section.soon" class="feature-badge">{{ t('home.soon') }}</span>
         </component>

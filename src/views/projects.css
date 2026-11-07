@@ -1,0 +1,155 @@
+/* === Intestazione === */
+.projects-header {
+  padding-top: 2em;
+  margin-bottom: 2em;
+}
+
+.code-comment {
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+  color: var(--code-comment);
+}
+
+/* === Griglia: tante colonne quante ne entrano, larghe almeno 300px === */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr));
+  gap: 1.25rem;
+}
+
+/* === Card in stile terminale === */
+.term-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+}
+
+.term-card:hover {
+  border-color: var(--accent);
+}
+
+.term-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.term-title {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--heading);
+}
+
+.term-prompt {
+  color: var(--code-keyword);
+}
+
+.term-year {
+  color: var(--code-comment);
+  font-size: 0.85em;
+}
+
+.term-desc {
+  margin: 0;
+  color: var(--text-soft);
+  line-height: 1.6;
+  flex-grow: 1;
+}
+
+.term-stack {
+  margin: 0;
+  color: var(--code-string);
+  font-size: 0.85em;
+}
+
+.term-links {
+  display: flex;
+  gap: 1.25rem;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--card-border);
+}
+
+.term-links a {
+  color: var(--heading);
+  text-decoration: none;
+  font-size: 0.85em;
+}
+
+.term-links a:hover,
+.term-links a:focus-visible {
+  color: var(--code-keyword);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* === Filtro per anno === */
+.year-filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+}
+
+.filter-cmd {
+  color: var(--code-keyword);
+  margin-right: 0.25rem;
+}
+
+.filter-btn {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--text-soft);
+  font: inherit;
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  border-color: var(--accent);
+  color: var(--heading);
+}
+
+/* Il bottone attivo: aria-pressed="true" lo imposta Vue */
+.filter-btn[aria-pressed='true'] {
+  background: var(--heading);
+  border-color: var(--heading);
+  color: var(--bg);
+}
+
+.filter-btn:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* === Contributors === */
+.term-with {
+  margin: 0;
+  color: var(--code-comment);
+  font-size: 0.85em;
+}
+
+.term-with a {
+  color: var(--heading);
+  text-decoration: none;
+}
+
+.term-with a:hover,
+.term-with a:focus-visible {
+  color: var(--code-keyword);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
