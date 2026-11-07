@@ -1,17 +1,3 @@
-/* Desktop Breakpoint */
-@media only screen and (max-width: 1024px) {
-  body {
-    font-size: 12px;
-  }
-}
-
-/* Tablet Breakpoint */
-@media only screen and (max-width: 768px) {
-  body {
-    font-size: 10px;
-  }
-}
-
 /* Mobile Breakpoint */
 @media only screen and (max-width: 440px) {
   :root {

@@ -24,7 +24,7 @@
 .cv-meta {
   margin: 0;
   font-family: var(--font-mono);
-  font-size: 0.85em;
+  font-size: 0.875rem;
   color: var(--text-soft);
 }
 
@@ -69,7 +69,7 @@
 .cv-period {
   margin: 0.2rem 0 0;
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   color: var(--code-comment);
   white-space: nowrap;
 }
@@ -103,7 +103,7 @@
 .cv-skills {
   margin-top: 0.5rem !important;
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   color: var(--code-string);
 }
 
@@ -123,14 +123,21 @@
   border-radius: 999px;
   background: var(--card-bg);
   font-family: var(--font-mono);
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   color: var(--heading);
 }
 
-/* Su schermi stretti il periodo va sopra al contenuto */
+/* Su schermi stretti restano le due colonne: la colonna delle date si stringe
+   e il periodo va a capo su due righe ("mar 2024 –" / "mar 2026") */
 @media (max-width: 600px) {
   .cv-item {
-    grid-template-columns: 1fr;
-    gap: 0.35rem;
+    grid-template-columns: 6rem 1fr;
+    gap: 1rem;
+  }
+
+  .cv-period {
+    font-size: 0.875rem;
+    line-height: 1.5;
+    white-space: normal;
   }
 }
