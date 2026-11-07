@@ -26,7 +26,7 @@ export const projects = [
   {
     id: 'NetArtRev',
     year: 2022,
-    stack: ['Python', 'Jupyter Notebook','Plotly','SPARQL', 'RDF', 'Miro', 'HTML+CSS'],
+    stack: ['Python', 'Jupyter Notebook', 'Plotly', 'SPARQL', 'RDF', 'Miro', 'HTML+CSS'],
     contributors: ['laurentfintoni', 'donellimargherita'],
     demo: 'https://laurentfintoni.github.io/Net-Art-Rev/',
     github: 'https://github.com/laurentfintoni/Net-Art-Rev',
@@ -34,7 +34,7 @@ export const projects = [
   {
     id: 'FlooData',
     year: 2022,
-    stack: ['Python', 'RDF', 'DCAT-AP 2.0.0', 'Highcharts JS','Bulma'],
+    stack: ['Python', 'RDF', 'DCAT-AP 2.0.0', 'Highcharts JS', 'Bulma'],
     contributors: ['GiuliaVenditti'],
     demo: 'https://chiaracati.github.io/FlooData/',
     github: 'https://github.com/ChiaraCati/FlooData',

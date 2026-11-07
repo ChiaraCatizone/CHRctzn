@@ -42,7 +42,42 @@ export default {
   },
   curriculum: {
     title: 'Curriculum Vitae',
-    construction: 'Construction is happening. 🎉',
+    name: 'Chiara Catizone',
+    role: "Software Engineer {'@'} NTT DATA Gov&Tech",
+    location: 'Bologna, Italy',
+    linkedin: 'LinkedIn profile',
+    present: 'Present',
+    experienceTitle: 'Experience',
+    educationTitle: 'Education',
+    skillsTitle: 'Skills',
+    grade: 'Grade',
+    experience: {
+      nttEngineer: {
+        role: 'Software Engineer',
+        type: 'Full-time · Milan, remote',
+        description: '',
+      },
+      nttAnalyst: {
+        role: 'Analyst',
+        type: 'Apprenticeship · Milan, remote',
+        description: '',
+      },
+      nttIntern: {
+        role: 'Analyst',
+        type: 'Internship',
+        description: '',
+      },
+      unibo: {
+        role: 'Web Developer',
+        type: 'Contract · CIRSFID, Bologna',
+        description:
+          'I built WordPress web resources to present the centre’s projects to the public. I also delivered a POC for hate speech classification, from extracting the data that defines it to selecting the most suitable LLMs for the task, as part of the FAST-LISA pilot project, an EU-backed initiative.',
+      },
+    },
+    education: {
+      master: "Master's degree in Digital Humanities and Digital Knowledge",
+      bachelor: "Bachelor's degree in Drama, Art and Music Studies (DAMS)",
+    },
   },
   projects: {
     title: 'Projects',
@@ -53,9 +88,12 @@ export default {
     items: {
       chrctzn:
         'My personal website, rebuilt from scratch in Vue with day/night mode and two languages.',
-      cartooNlp: 'CartooNLP explores how the language of Disney films changed over almost a century, from 1937 to 2021. Starting from the subtitles of 59 films, the project uses topic modeling (MALLET) to group the films by theme and sentiment analysis (Syuzhet, R) to follow the emotional arc of the dialogue.',
-      NetArtRev: 'A data visualisation and storytelling project asking whether the internet and personal computers changed the make-up of art collections. It compares open data from two New York institutions: MoMA, representing the traditional art world, and Rhizome, devoted to net art and born-digital culture. The result is an interactive visual narrative published as a website.',
-      FlooData: 'An open data project on hydrogeological risk in Emilia-Romagna. It combines open datasets from ISPRA, the Emilia-Romagna Region and OpenCoesione into three new datasets covering disruptions, preventive and restorative interventions, and risk by province. It comes with a quality, legal and ethical analysis of the data, plus a website with interactive maps and charts.',
+      cartooNlp:
+        'CartooNLP explores how the language of Disney films changed over almost a century, from 1937 to 2021. Starting from the subtitles of 59 films, the project uses topic modeling (MALLET) to group the films by theme and sentiment analysis (Syuzhet, R) to follow the emotional arc of the dialogue.',
+      NetArtRev:
+        'A data visualisation and storytelling project asking whether the internet and personal computers changed the make-up of art collections. It compares open data from two New York institutions: MoMA, representing the traditional art world, and Rhizome, devoted to net art and born-digital culture. The result is an interactive visual narrative published as a website.',
+      FlooData:
+        'An open data project on hydrogeological risk in Emilia-Romagna. It combines open datasets from ISPRA, the Emilia-Romagna Region and OpenCoesione into three new datasets covering disruptions, preventive and restorative interventions, and risk by province. It comes with a quality, legal and ethical analysis of the data, plus a website with interactive maps and charts.',
     },
   },
 }

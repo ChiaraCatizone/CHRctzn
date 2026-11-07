@@ -45,7 +45,42 @@ export default {
   },
   curriculum: {
     title: 'Curriculum Vitae',
-    construction: 'Lavori in corso. 🎉',
+    name: 'Chiara Catizone',
+    role: "Software Engineer {'@'} NTT DATA Gov&Tech",
+    location: 'Bologna, Italia',
+    linkedin: 'Profilo LinkedIn',
+    present: 'Presente',
+    experienceTitle: 'Esperienza',
+    educationTitle: 'Formazione',
+    skillsTitle: 'Competenze',
+    grade: 'Voto',
+    experience: {
+      nttEngineer: {
+        role: 'Software Engineer',
+        type: 'Tempo pieno · Milano, da remoto',
+        description: '',
+      },
+      nttAnalyst: {
+        role: 'Analista',
+        type: 'Apprendistato · Milano, da remoto',
+        description: '',
+      },
+      nttIntern: {
+        role: 'Analista',
+        type: 'Stage',
+        description: '',
+      },
+      unibo: {
+        role: 'Sviluppatore web',
+        type: 'A contratto · CIRSFID, Bologna',
+        description:
+          'Ho sviluppato risorse web in WordPress per presentare al pubblico i progetti del centro. Ho realizzato un POC per la classificazione del linguaggio d’odio: dall’estrazione dei dati per definirlo fino alla scelta degli LLM più adatti al compito, nel progetto pilota FAST-LISA, iniziativa sostenuta dall’UE.',
+      },
+    },
+    education: {
+      master: 'Laurea magistrale in Digital Humanities and Digital Knowledge',
+      bachelor: 'Laurea triennale in DAMS – Discipline delle Arti, della Musica e dello Spettacolo',
+    },
   },
   projects: {
     title: 'Progetti',
@@ -59,8 +94,10 @@ export default {
         'Il mio sito personale, rifatto da zero in Vue con modalità giorno/notte e due lingue.',
       cartooNlp:
         'CartooNLP esplora come cambia il linguaggio dei film Disney in quasi un secolo, dal 1937 al 2021. Partendo dai sottotitoli di 59 film, il progetto usa il topic modeling (MALLET) per raggruppare i film per temi e la sentiment analysis (Syuzhet, R) per seguire l’andamento emotivo dei dialoghi.',
-      NetArtRev: 'Un progetto di data visualization e storytelling che si chiede se internet e il personal computer abbiano cambiato la composizione delle collezioni d’arte. Confronta i dati aperti di due istituzioni newyorkesi: il MoMA, che rappresenta il mondo dell’arte tradizionale, e Rhizome, dedicata alla net art e alla cultura digitale. Il risultato è un racconto visivo interattivo pubblicato come sito web.',
-      FlooData: 'Un progetto di open data sul rischio idrogeologico in Emilia-Romagna. Integra dataset aperti di ISPRA, Regione Emilia-Romagna e OpenCoesione in tre nuovi dataset su dissesti, interventi preventivi e riparativi e rischio per provincia. È accompagnato da un’analisi di qualità, licenze ed etica dei dati, e da un sito con mappe e grafici interattivi.',
+      NetArtRev:
+        'Un progetto di data visualization e storytelling che si chiede se internet e il personal computer abbiano cambiato la composizione delle collezioni d’arte. Confronta i dati aperti di due istituzioni newyorkesi: il MoMA, che rappresenta il mondo dell’arte tradizionale, e Rhizome, dedicata alla net art e alla cultura digitale. Il risultato è un racconto visivo interattivo pubblicato come sito web.',
+      FlooData:
+        'Un progetto di open data sul rischio idrogeologico in Emilia-Romagna. Integra dataset aperti di ISPRA, Regione Emilia-Romagna e OpenCoesione in tre nuovi dataset su dissesti, interventi preventivi e riparativi e rischio per provincia. È accompagnato da un’analisi di qualità, licenze ed etica dei dati, e da un sito con mappe e grafici interattivi.',
     },
   },
 }
