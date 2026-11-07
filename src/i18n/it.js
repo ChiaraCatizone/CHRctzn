@@ -36,4 +36,8 @@ export default {
     title: 'Chi sono',
     construction: 'Lavori in corso. 🎉',
   },
+  curriculum: {
+    title: 'Curriculum Vitae',
+    construction: 'Lavori in corso. 🎉',
+  },
 }

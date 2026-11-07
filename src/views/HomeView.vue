@@ -25,7 +25,6 @@ const sections = [
         <h1 class="melting-text">{{ t('home.greeting') }}</h1>
       </div>
       <h1 class="subtitle">{{ t('home.subtitle') }}</h1>
-      <p class="lead-text">{{ t('home.construction') }}</p>
     </section>
 
     <section>

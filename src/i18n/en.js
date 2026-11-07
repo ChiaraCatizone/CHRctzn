@@ -36,4 +36,8 @@ export default {
     title: 'About',
     construction: 'Construction is happening. 🎉',
   },
+  curriculum: {
+    title: 'Curriculum Vitae',
+    construction: 'Construction is happening. 🎉',
+  },
 }
