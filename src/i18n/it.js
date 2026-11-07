@@ -43,6 +43,7 @@ export default {
   },
   about: {
     title: 'Chi sono',
+    illustration: 'Un canederlo più una Brasilena fa un cuore',
     p1: 'Ciao, sono Chiara! Sono nata a Bolzano, da mamma bolzanina e papà calabrese: sono cresciuta tra canederli e Brasilena, montagne e mare, e forse è da lì che mi viene la naturalezza nello stare a metà tra mondi diversi.',
     p2: 'Da ragazzina passavo le giornate a disegnare e a sperimentare con l’HTML. Dopo il liceo artistico, un anno in Irlanda grazie a una borsa di studio europea e una triennale legata all’arte a Bologna, dove vivo dal 2015, ha vinto la tecnologia (e la serotonina di un codice che funziona): ho scelto la magistrale in Digital Humanities.',
     p3: 'In magistrale ho conosciuto persone davvero brillanti, e lavorare insieme a loro su diversi progetti è stato prezioso: mi ha fatto venire voglia di vedere da vicino come si costruisce il software ogni giorno, così ho deciso di entrare in azienda.',

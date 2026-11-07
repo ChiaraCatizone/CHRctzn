@@ -119,7 +119,7 @@ svg {
 .main {
   max-width: var(--page-max);
   margin: 0 auto;
-  padding: 1em var(--page-gutter) 4em;
+  padding: 0.5em var(--page-gutter) 4em;
 }
 
 /* Riga del titolo nelle pagine secondarie: titolo a sinistra, freccia per la home a destra */

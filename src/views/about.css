@@ -1,10 +1,68 @@
 .about-header {
-  padding-top: 2em;
+  padding-top: 0;
   margin-bottom: 2em;
 }
 
 .about p {
-  max-width: 70ch; /* righe non troppo lunghe, si leggono meglio */
+  max-width: 90ch; /* righe non troppo lunghe, si leggono meglio */
   line-height: 1.7;
   color: var(--text);
+}
+
+/* Titolo tutto maiuscolo, come il saluto in home */
+.about-header h1 {
+  text-transform: uppercase;
+}
+
+/* === Primo paragrafo con l'illustrazione a destra === */
+.about-intro {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  max-width: 90ch; /* come gli altri paragrafi: l'illustrazione non esce dal testo */
+  margin-bottom: 1rem;
+}
+
+.about-intro p {
+  flex: 1;
+  margin: 0;
+}
+
+/* Disegnata a linea come le icone del sito: prende il colore dei titoli */
+.about-illustration {
+  flex-shrink: 0;
+  width: 16rem;
+  height: auto;
+  fill: none;
+  stroke: var(--heading);
+  stroke-width: 1.6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.about-illustration .speck {
+  fill: var(--heading);
+  stroke: none;
+}
+
+.about-illustration .heart {
+  stroke: var(--accent);
+}
+
+/* Su schermi stretti l'illustrazione va sotto al paragrafo */
+@media (max-width: 600px) {
+  .about-intro {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .about-illustration {
+    width: 14rem;
+  }
+}
+
+/* Spazio in fondo per Iago, che cammina sulla linea del footer */
+.main.about {
+  padding-bottom: 12rem;
 }

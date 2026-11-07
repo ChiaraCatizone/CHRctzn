@@ -13,22 +13,6 @@
   padding-right: var(--page-gutter);
 }
 
-.glitch-text {
-  font-size: 5rem;
-  font-weight: 400;
-  position: relative;
-  color: var(--heading);
-}
-
-/* Il titolo porta alla home: al passaggio del mouse diventa viola e si sottolinea, come gli altri link */
-.navbar-brand:hover .glitch-text,
-.navbar-brand:focus-visible .glitch-text {
-  color: var(--accent);
-  text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 0.12em;
-}
-
 /* I tasti rotondi (lingua e tema) */
 .nav-actions {
   display: flex;
