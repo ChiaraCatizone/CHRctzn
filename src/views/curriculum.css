@@ -1,0 +1,137 @@
+/* === Intestazione === */
+.cv-header {
+  padding-top: 2em;
+  margin-bottom: 3em;
+}
+
+.code-comment {
+  margin-bottom: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+  color: var(--code-comment);
+}
+
+.cv-header h1 {
+  margin-bottom: 0.25rem;
+}
+
+.cv-role {
+  margin: 0 0 0.5rem;
+  font-size: 1.25em;
+  color: var(--text);
+}
+
+.cv-meta {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  color: var(--text-soft);
+}
+
+.cv-meta a {
+  color: var(--heading);
+  text-decoration: none;
+}
+
+.cv-meta a:hover,
+.cv-meta a:focus-visible {
+  color: var(--code-keyword);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* === Sezioni === */
+.cv-section {
+  margin-bottom: 3em;
+}
+
+.cv-section-title {
+  font-size: 1.5em;
+  font-weight: 400;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+/* === Righe: periodo a sinistra, contenuto a destra === */
+.cv-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cv-item {
+  display: grid;
+  grid-template-columns: 11rem 1fr;
+  gap: 1.5rem;
+  padding-bottom: 1.75rem;
+}
+
+.cv-period {
+  margin: 0.2rem 0 0;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--code-comment);
+  white-space: nowrap;
+}
+
+.cv-body p {
+  margin: 0;
+}
+
+.cv-item-title {
+  margin: 0 0 0.15rem;
+  font-size: 1.15em;
+  font-weight: 400;
+}
+
+.cv-org {
+  color: var(--text);
+}
+
+.cv-type {
+  color: var(--text-soft);
+  font-size: 0.9em;
+}
+
+.cv-desc {
+  margin-top: 0.6rem !important;
+  max-width: 65ch;
+  color: var(--text-soft);
+  line-height: 1.6;
+}
+
+.cv-skills {
+  margin-top: 0.5rem !important;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--code-string);
+}
+
+/* === Competenze: "chip" in stile terminale === */
+.cv-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cv-chips li {
+  padding: 0.3rem 0.8rem;
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  background: var(--card-bg);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--heading);
+}
+
+/* Su schermi stretti il periodo va sopra al contenuto */
+@media (max-width: 600px) {
+  .cv-item {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}
